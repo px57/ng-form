@@ -1,0 +1,25 @@
+<!-- D'abord il faudrait charger la version inselectionnables de cette éléments  -->
+<!-- Ensuite ont verra à afficher la bonne version -->
+<!-- Il faudrait aussi êtres en capacités dadouber les différents morceaux de l'applications -->
+<div class="submitcomponent">
+   <button
+     *ngIf="!ComponentForm.valid"
+     [class]="parentClass + ' unclickable submit_container'">
+   <div>
+      {{value}}
+   </div>
+   </button>
+   <button *ngIf="ComponentForm.valid"
+   type="submit"
+   [class]="parentClass + ' submit_container'">
+   <div *ngIf="submit_loading">
+      <mat-spinner
+        diameter="20"
+        color="white">
+      </mat-spinner>
+   </div>
+   <div *ngIf="!submit_loading">
+      {{value}}
+   </div>
+   </button>
+</div>
