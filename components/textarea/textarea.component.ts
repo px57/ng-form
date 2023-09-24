@@ -7,13 +7,27 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./textarea.component.css']
 })
 export class TextareaComponent implements OnInit {
+  /**
+   * @description: 
+   */
   @Input() settings:any = '';
-  used_caratere: number = 0;
+
+  /**
+   * @description: 
+   */
+  public used_caratere: number = 0;
+
+  /**
+   * @description: 
+   */
   constructor(
   ) {}
 
-  ngOnInit(): void {
-    this.settings.ComponentForm.valueChanges.subscribe((val) => {
+  /**
+   * @description: 
+   */
+  public ngOnInit(): void {
+    this.settings.ComponentForm.valueChanges.subscribe((val: any) => {
       let messages = val[this.settings.formControlName];
       if (messages === null) {
           messages = '';

@@ -8,6 +8,7 @@ import { CheckboxComponent } from './components/checkbox/checkbox.component';
 import { FilterComponent } from './components/filter/filter.component';
 
 import { FormsService } from './services/forms.service';
+import { InputComponent } from './components/input/input.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { FormsService } from './services/forms.service';
     SubmitComponent,
     CheckboxComponent,
     FilterComponent,
+    InputComponent,
   ],
   imports: [
     CommonModule
@@ -27,6 +29,9 @@ import { FormsService } from './services/forms.service';
     FormErrorComponent,
     TextareaComponent,
     SubmitComponent,
+    CheckboxComponent,
+    FilterComponent,
+    InputComponent,
   ]
 })
 export class FormModule { }

@@ -6,9 +6,17 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./checkbox.component.css'],
 })
 export class CheckboxComponent implements OnInit {
+
+  /**
+   * @description: 
+   */
   @Input()
-  public state: boolean;
-  public isMultiple: boolean;
+  public state: boolean = false;
+
+  /**
+   * @description:
+   */
+  public isMultiple: boolean = false;
 
   @Input()
   public type: 'checkbox' | 'checkbox_circle' = 'checkbox';

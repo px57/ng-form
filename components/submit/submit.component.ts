@@ -7,10 +7,29 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./submit.component.css']
 })
 export class SubmitComponent implements OnInit {
-  @Input() ComponentForm: FormGroup;
-  @Input() submit_loading: boolean;
+  /**
+   * @description: 
+   */
+  @Input() ComponentForm: FormGroup | undefined;
+
+  /**
+   * @description: 
+   */
+  @Input() submit_loading: boolean | undefined;
+
+  /**
+   * @description: 
+   */
   @Input() value:string = 'Valider';
+
+  /**
+   * @description: 
+   */
   @Input() list_class_name: string = '';
+
+  /**
+   * @description: 
+   */
   @Input() parentClass: string = ``;
 
   /*

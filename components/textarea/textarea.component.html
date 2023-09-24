@@ -1,11 +1,11 @@
 
-<div [formGroup]="settings.ComponentForm">
+<div [attr.formGroup]="settings.ComponentForm">
   <textarea class="orderrequesttextarea"
-    [formControlName]="settings.formControlName"
+    [attr.formControlName]="settings.formControlName"
     name="name"
     rows="8"
     cols="80"
-    [maxlength]="maxlength()"
+    [attr.maxlength]="maxlength()"
     [placeholder]="settings.placeholder"
     [required]="settings.required"
     (blur)="onBlur()"
