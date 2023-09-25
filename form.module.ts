@@ -9,6 +9,7 @@ import { FilterComponent } from './components/filter/filter.component';
 
 import { FormsService } from './services/forms.service';
 import { InputComponent } from './components/input/input.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,9 @@ import { InputComponent } from './components/input/input.component';
     InputComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [
     FormsService,
