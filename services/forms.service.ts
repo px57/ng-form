@@ -1,8 +1,8 @@
 import { Injectable } from "@angular/core";
-// import '@angulars/localize/init';
+import { ConfigInput } from 'src/modules/form/types';
+import { DynamicFormManager } from 'src/modules/form/classes/dynamic_form';
 
 var $localize = (msg: any) => msg;
-var $localize = function(data: any) { return data };
 
 const FORM_DJANGO_TRADUCTOR: any = {
   email: {
@@ -117,5 +117,21 @@ export class FormsService {
     }
 
     return FORM_DJANGO_TRADUCTOR[inputName][error];
+  }
+
+  public getInput(inputList: Array<ConfigInput>, input_name: string): ConfigInput | undefined {
+    for (let input of inputList) {
+      if (input.name === input_name) {
+        return input;
+      }
+    }
+    throw new Error(`Input ${input_name} not found`);
+  }
+ 
+  /**
+   * @description: 
+   */
+  public getDynamicForm(inputList: Array<ConfigInput>): DynamicFormManager {
+    return new DynamicFormManager(inputList);
   }
 }
