@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
-import { FormsService } from "src/app/services/forms.service";
+import { FormsService } from "src/modules/form/services/forms.service";
 
 
 

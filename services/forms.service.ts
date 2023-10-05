@@ -1,40 +1,16 @@
 import { Injectable } from "@angular/core";
-import { ConfigInput } from 'src/modules/form/types';
-import { DynamicFormManager } from 'src/modules/form/classes/dynamic_form';
 
-var $localize = (msg: any) => msg;
-
+/**
+ * @description: HELP THE USER TO UNDERSTAND THE ERROR MESSAGE. 
+ */
 const FORM_DJANGO_TRADUCTOR: any = {
-  email: {
-    exists: $localize`This email address is already in use.`,
-    invalid: $localize`The email address is invalid.`,
-    required: $localize`This field is required.`,
-    not_encountered: $localize`This email address is not registered.`,
-    'Enter a valid email address.': $localize`The email address is invalid.`,
-    invalid_partner_email: $localize`The email address is invalid for this partner.`,
-  },
-  password: {
-    password_is_alpha: $localize`Password must contain at least one number.`,
-    password_is_numeric: $localize`Password must contain at least one letter.`,
-    password_too_long: $localize`Password must contain at most 128 characters.`,
-    password_too_short: $localize`Password must contain at least 8 characters.`,
-    password_is_lower: $localize`Password must contain at least one uppercase letter.`,
-    password_has_space: $localize`Password must not contain spaces.`,
-    required: $localize`This field is required.`,
-  },
-  collegeCode: {
-    invalid: $localize`The college code is invalid.`,
-    required: $localize`This field is required.`,
-  },
-  first_name: {
-    required: $localize`This field is required.`,
-  },
-  last_name: {
-    required: $localize`This field is required.`,
-  },
-  __signin__: {
-    not_exists: $localize`Please fill in your email and password to sign in`,
-  },
+  // email: {
+  //   exists: $localize`This email address is already in use.`,
+  //   invalid: $localize`The email address is invalid.`,
+  //   required: $localize`This field is required.`,
+  //   not_encountered: $localize`This email address is not registered.`,
+  //   'Enter a valid email address.': $localize`The email address is invalid.`,
+  // },
 };
 
 @Injectable({
@@ -119,19 +95,17 @@ export class FormsService {
     return FORM_DJANGO_TRADUCTOR[inputName][error];
   }
 
-  public getInput(inputList: Array<ConfigInput>, input_name: string): ConfigInput | undefined {
-    for (let input of inputList) {
-      if (input.name === input_name) {
-        return input;
+  /**
+   * @description: Add the error message to the traductor.
+   */
+  public setConvertFormError(dict: any): void {
+    for (const key of Object.keys(dict)) {
+      console.log(key);
+      if (FORM_DJANGO_TRADUCTOR.hasOwnProperty(key) === false) {
+        FORM_DJANGO_TRADUCTOR[key] = dict[key];
+      } else {
+        Object.assign(FORM_DJANGO_TRADUCTOR[key], dict[key]);
       }
     }
-    throw new Error(`Input ${input_name} not found`);
-  }
- 
-  /**
-   * @description: 
-   */
-  public getDynamicForm(inputList: Array<ConfigInput>): DynamicFormManager {
-    return new DynamicFormManager(inputList);
   }
 }
