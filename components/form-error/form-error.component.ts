@@ -28,11 +28,6 @@ export class FormErrorComponent implements OnInit {
    * @description:
    */
   public ngOnChanges(changes: any): void {
-    // if (this.formsService.notHasError(this.httpResponse, this.inputName)) {
-    //   this.error_msg = undefined;
-    //   return;
-    // }
-
     this.error_msg = this.formsService.getErrorMsg(this.httpResponse, this.inputName);
   }
 }

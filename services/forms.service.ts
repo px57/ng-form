@@ -68,7 +68,6 @@ export class FormsService {
     }
 
     const error = httpResponse.form_error[inputName][0];
-    console.log(httpResponse.form_error[inputName])
     const errorMsg = this.getErrorMsgDjango(error, inputName);
     if (errorMsg === undefined) {
       console.error("FORM-ERROR>>>>", error);
@@ -86,14 +85,10 @@ export class FormsService {
     inputName: string
   ): string | undefined {
     if (FORM_DJANGO_TRADUCTOR.hasOwnProperty(inputName) === false) {
-      console.log(`-${inputName}-`)
-      console.log(FORM_DJANGO_TRADUCTOR)
-      console.log('sortie 1')
       return undefined;
     }
 
     if (FORM_DJANGO_TRADUCTOR[inputName].hasOwnProperty(error) === false) {
-      console.log('sortie 2')
       return undefined;
     }
 
@@ -105,7 +100,6 @@ export class FormsService {
    */
   public setConvertFormError(dict: any): void {
     for (const key of Object.keys(dict)) {
-      console.log(key);
       if (FORM_DJANGO_TRADUCTOR.hasOwnProperty(key) === false) {
         FORM_DJANGO_TRADUCTOR[key] = dict[key];
       } else {
