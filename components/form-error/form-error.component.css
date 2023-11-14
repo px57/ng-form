@@ -1,7 +1,11 @@
 p {
-  color: #fd346e;
-  /* margin-top: -12px; */
+  color: #f04438;
   z-index: 1;
   position: relative;
-  /* margin-top: 10px; */
+
+  font-family: Inter;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 142.857% */
 }
