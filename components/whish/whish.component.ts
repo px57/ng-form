@@ -3,10 +3,10 @@ import {
   OnInit,
   Input,
   Output } from '@angular/core';
-import { UserService } from './../../services/user.service';
-import { LibsService } from './../../services/libs.service';
-import { OpenCloseElementService } from './../../services/open-close-element.service';
-import { HttpService } from './../../services/http.service';
+import { UserService } from '../../services/user.service';
+import { LibsService } from '../../services/libs.service';
+import { OpenCloseElementService } from '../../services/open-close-element.service';
+import { HttpService } from '../../services/http.service';
 
 @Component({
   selector: 'tools-whish',

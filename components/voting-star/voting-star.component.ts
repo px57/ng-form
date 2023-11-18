@@ -3,8 +3,8 @@
 
 import { Component, OnInit, Input} from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { HttpService } from './../../services/http.service';
-import { UserService } from './../../services/user.service';
+import { HttpService } from '../../services/http.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-voting-star',

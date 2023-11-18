@@ -5,13 +5,13 @@ import {
   OnChanges,
 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { BoockingService } from './../../services/boocking.service';
-import { UserService } from './../../services/user.service';
+import { BoockingService } from '../../services/boocking.service';
+import { UserService } from '../../services/user.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { OpenCloseElementService } from './../../services/open-close-element.service';
-import { HttpService } from './../../services/http.service';
+import { OpenCloseElementService } from '../../services/open-close-element.service';
+import { HttpService } from '../../services/http.service';
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { LibsService } from './../../services/libs.service';
+import { LibsService } from '../../services/libs.service';
 
 @Component({
   selector: 'app-star-voting-space',
